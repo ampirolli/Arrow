@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/AppTheme"
     tools:context="com.example.arrow.arrow.AddBillActivity">
 
     <EditText
@@ -32,8 +31,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        tools:layout_editor_absoluteX="127dp"
-        tools:layout_editor_absoluteY="246dp" />
+        tools:layout_editor_absoluteY="246dp"
+        tools:layout_editor_absoluteX="127dp" />
 
     <TextView
         android:id="@+id/textView"
@@ -49,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteX="130dp"
         tools:layout_editor_absoluteY="16dp"
         tools:text="Company Name" />
 
@@ -66,10 +65,10 @@
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="45dp" />
+        tools:layout_editor_absoluteY="42dp" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/spinner3"
         android:layout_width="344dp"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="8dp"
