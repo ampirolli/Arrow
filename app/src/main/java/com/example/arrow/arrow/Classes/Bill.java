@@ -18,13 +18,22 @@ public class Bill {
     String billNickname;
     Integer billPaymentDay;
     BigDecimal billPaymentAmount;
-
+    BillFrequency billFrequency;
     //enum for the frequency of a payment
-    enum billPaymentFrequency{
+    enum BillFrequency{
         Weekly, Monthly, Quarterly, BiAnually, Anually
     }
 
-    public Bill(Integer userId, Integer billId, Integer companyId, String billCompanyName, String billNickname, Integer billPaymentDay, BigDecimal billPaymentAmount) {
+    public Bill() {
+
+    }
+
+    public Bill(Integer billId) {
+        this.billId = billId;
+        //GET THE REST OF THE DATA FROM THE DATABASE
+    }
+
+    public Bill(Integer userId, Integer billId, Integer companyId, String billCompanyName, String billNickname, Integer billPaymentDay, BigDecimal billPaymentAmount, BillFrequency billFrequency) {
         this.userId = userId;
         this.billId = billId;
         this.companyId = companyId;
@@ -32,7 +41,9 @@ public class Bill {
         this.billNickname = billNickname;
         this.billPaymentDay = billPaymentDay;
         this.billPaymentAmount = billPaymentAmount;
+        this.billFrequency = billFrequency;
     }
+
 
     public Integer getUserId() {
         return userId;
@@ -88,6 +99,41 @@ public class Bill {
 
     public void setBillPaymentAmount(BigDecimal billPaymentAmount) {
         this.billPaymentAmount = billPaymentAmount;
+    }
+
+    public BillFrequency getBillPaymentFrequency() {
+        return billFrequency;
+    }
+
+    public void setBillPaymentFrequency(Integer billPaymentFrequencyId) {
+
+        switch(billPaymentFrequencyId){
+
+            case 0:
+                billFrequency = billFrequency.Weekly;
+                break;
+
+            case 1:
+                billFrequency = billFrequency.Monthly;
+                break;
+
+            case 2:
+                billFrequency = billFrequency.Quarterly;
+                break;
+
+            case 3:
+                billFrequency = billFrequency.BiAnually;
+                break;
+
+            case 4:
+                billFrequency = billFrequency.Anually;
+                break;
+
+            default:
+                billFrequency = billFrequency.Monthly;
+                break;
+        }
+
     }
 
 
